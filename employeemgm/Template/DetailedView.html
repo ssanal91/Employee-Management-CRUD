@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detailed View</title>
+</head>
+<body>
+{% block content %}
+
+<div>
+    <table class="table table-bordered border-dark">
+
+        <tr>
+            <th>Employee Id</th>
+            <td>{{d.emp_id}}</td>
+        </tr>
+         <tr>
+            <th>Employee Name</th>
+            <td>{{d.emp_name}}</td>
+        </tr>
+         <tr>
+            <th>Employee Age</th>
+            <td>{{d.emp_age}}</td>
+        </tr>
+         <tr>
+            <th>Employee Address</th>
+            <td>{{d.emp_address}}</td>
+        </tr>
+         <tr>
+            <th>Employee Contact Number</th>
+            <td>{{d.emp_contact_no}}</td>
+        </tr>
+         <tr>
+            <th>Employee Joining Date</th>
+            <td>{{d.emp_joining_date}}</td>
+        </tr>
+        <tr>
+            <th>Employee Designation</th>
+            <td>{{d.emp_designation_name}}</td>
+        </tr>
+        <tr>
+            <th>Employee Department</th>
+            <td>{{d.d_name.d_name}}</td>
+        </tr>
+
+
+    </table>
+</div>
+
+{% endblock %}
+
+</body>
+</html>

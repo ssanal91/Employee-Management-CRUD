@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+{% block content %}
+<h3 class="text-center mt-5"> Employee Lists </h3>
+<!--{{emp}}-->
+<div>
+    <table class="table table-primary table-bordered border-dark mt-4" >
+        <thead class="table-dark">
+        <tr>
+            <th>Employee Id </th>
+            <th>Employee Name</th>
+            <th> Employee Age</th>
+            <th> Address </th>
+            <th> Contact </th>
+            <th> Joining date </th>
+            <th> Designation </th>
+            <th> Department name </th>
+            <th> View</th>
+              <th> Edit</th>
+              <th> Delete</th>
+        </tr>
+        </thead>
+        {% for i in emp %}
+        <tr>
+            <td>{{i.emp_id}}</td>
+            <td>{{i.emp_name}}</td>
+            <td>{{i.emp_age}}</td>
+            <td>{{i.emp_address}}</td>
+            <td>{{i.emp_contact_no}}</td>
+            <td>{{i.emp_joining_date}}</td>
+            <td>{{i.emp_designation_name}}</td>
+            <td>{{i.d_name.d_name}}</td>
+            <td><a href="{% url 'employee:details' i.id %}" class="btn btn-danger">View </a></td>
+            <td><a href="{% url 'employee:update' i.id %}" class="btn btn-danger">Update</a></td>
+            <td><a href="{% url 'employee:delete' i.id %}" class="btn btn-danger">Delete</a></td>
+        </tr>
+        {% endfor %}
+
+
+    </table>
+</div>
+
+{% endblock %}
+
+</body>
+</html>

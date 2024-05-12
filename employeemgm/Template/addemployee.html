@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> {% block title %} Add {% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<h1 class="text-center"> Add Employee </h1>
+
+<!--<form method="POST" enctype="multipart/form-data">-->
+<!--    {% csrf_token %}-->
+<!--       <table>-->
+<!--           {{form.as_table}}-->
+<!--       </table>-->
+<!--    <input type="submit" value="Submit">-->
+
+
+<!--</form>-->
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+<div class="mb3">
+    <label class="form label"> Employee Id </label>
+    <input type="number" class="form-control" name="i" placeholder="Enter Id">
+</div>
+
+<div class="mb3">
+    <label class="form label">Employee Name  </label>
+    <input type="text" class="form-control" name="n" placeholder="Enter name">
+</div>
+
+<div class="mb3">
+    <label class="form label"> Age </label>
+    <input type="number" class="form-control" name="a" placeholder="Enter age">
+</div>
+    <div class="mb3">
+    <label class="form label"> Address </label>
+    <input type="text" class="form-control" name="ad" placeholder="Enter address">
+</div>
+     <div class="mb3">
+    <label class="form label"> Contact Number </label>
+    <input type="text" class="form-control" name="cn" placeholder="Enter Contactnumber">
+</div>
+     <div class="mb3">
+    <label class="form label"> Joining Date </label>
+    <input type="date" class="form-control" name="jd" placeholder="Enter DOJ">
+</div>
+     <div class="mb3">
+    <label class="form label"> Designation </label>
+    <input type="text" class="form-control" name="d" placeholder="Enter designation">
+</div>
+     <div class="mb3">
+    <label class="form label"> Department </label>
+    <input type="text" class="form-control" name="dp" placeholder="Enter department">
+</div>
+
+<div class="mb3">
+    <input type="submit" value="Submit">
+</div>
+</form>
+
+
+{% endblock %}
+
+</body>
+</html>
